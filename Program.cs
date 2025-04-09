@@ -104,6 +104,15 @@ namespace Funcations
 
         }
 
+        public static double DaystoWeeksandDaysConverter(int UserDays)
+        {
+            int week;
+            int days;
+            week = UserDays / 7;
+            days = UserDays % 7;
+            string massage = week + " weeks and " + days + " days";
+            return massage;
+        }
         public static void printValue(string input)
         {
             Console.WriteLine("the result of this operation is: " + input);
@@ -179,7 +188,22 @@ namespace Funcations
                     string res6 = SwapTwoNumbers(num1, num2);
                     printValue(res6.ToString());
                     break;
+                // Days to Weeks and Days Converter 
+                case 7:
+                    int UserDays;
+                    Console.WriteLine("Enter the number of days :\n");
+                    UserDays = int.Parse(Console.ReadLine());
 
+                    break;
+                // Electricity Bill Calculator
+                case 8:
+
+                    break;
+
+                // Simple Calculator 
+                case 9:
+
+                    break;
 
             }
 
