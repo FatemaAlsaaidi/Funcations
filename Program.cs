@@ -176,7 +176,8 @@ namespace Funcations
                     Console.WriteLine("Enter Second Number:\n");
                     num2 = int.Parse(Console.ReadLine());
 
-
+                    string res6 = SwapTwoNumbers(num1, num2);
+                    printValue(res6.ToString());
                     break;
 
 
