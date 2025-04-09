@@ -44,33 +44,80 @@ namespace Funcations
         // Temperature Converter 
         public static double TemperatureConverter(double C)
         {
-
             double F;
 
             F = (C * 9 / 5) + 32;
 
             return F;
-
-
         }
+        // Simple Discount Calculator
+        public static double SimpleDiscountCalculator(double price)
+        {
+            double discount;
+            double disprice;
+            if (price > 100)
+            {
+                discount = price * 0.10;
+                disprice = price - discount;
+                return disprice;
+
+            }
+            else
+            {
+                return price;
+            }
+        }
+        // Grading System
+
+        public static char GradingSystem(int Mark)
+        {
+            char grade;
+
+
+            if (Mark >= 90)
+                grade = 'A';
+            else if (Mark >= 80)
+                grade = 'B';
+            else if (Mark >= 70)
+                grade = 'C';
+            else if (Mark >= 60)
+                grade = 'D';
+            else
+                grade = 'F';
+
+            return grade;
+        }
+
+        // Swap Two Numbers 
+
+        pub
+
+        public static void printValue(string input)
+        {
+            Console.WriteLine("the result of this operation is: " + input);
+        }
+
         static void Main(string[] args)
         {
             Console.WriteLine("Enter the number of operation:"); 
             Console.WriteLine("1. Even or Odd ");
             Console.WriteLine("2. Largest of Three Numbers ");
             Console.WriteLine("3. Temperature Converter ");
+            Console.WriteLine("4. Simple Discount Calculator ");
             int choice = int.Parse(Console.ReadLine());
+
 
 
             switch (choice)
             {
+                // Even or Odd
                 case 1:
                     Console.WriteLine("Enter the number:");
                     int num = int.Parse(Console.ReadLine());
                     string res = EvenOdd(num);
-                    Console.WriteLine(res);
+                    printValue(res);
                     break;
-
+                // Largest of Three Numbers
                 case 2:
                     Console.WriteLine("Enter first number:");
                     double num1 = double.Parse(Console.ReadLine());
@@ -80,14 +127,30 @@ namespace Funcations
                     double num3 = double.Parse(Console.ReadLine());
 
                     double res2 = LargestThreeNumbers(num1, num2, num3);
-                    Console.WriteLine($"The largest number is {res2}");
-                    break;
+                    printValue(res2.ToString());
 
+                    break;
+                // Temperature Converter
                 case 3:
                     Console.WriteLine("\nEnter the dgree of temerature in Celsius:\n");
                     double C = double.Parse(Console.ReadLine());
                     double res3 = TemperatureConverter(C);
                     Console.WriteLine("\nthe " + C + " Celsius degree in Fahrenheit is " + res3);
+                    break;
+                //Simple Discount Calculator
+                case 4:
+                    Console.WriteLine("\nEnter the price: \n");
+                    double price = double.Parse(Console.ReadLine());
+                    double res4 = SimpleDiscountCalculator(price);
+                    printValue(res4.ToString());
+                    break;
+
+                case 5:
+                    int Mark;
+                    Console.WriteLine("Enter Your Mark:\n");
+                    Mark = int.Parse(Console.ReadLine());
+                    char res5 = GradingSystem(Mark);
+                    printValue(res5.ToString());
                     break;
 
 
