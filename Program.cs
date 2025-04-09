@@ -90,7 +90,19 @@ namespace Funcations
 
         // Swap Two Numbers 
 
-        pub
+        public static string SwapTwoNumbers(double num1, double num2)
+        {
+           
+            double hold;
+
+            hold = num1;
+            num1 = num2;
+            num2 = hold;
+
+            string massege = "First number is " + num1 + " Second number is " + num2;
+            return massege;
+
+        }
 
         public static void printValue(string input)
         {
@@ -104,6 +116,8 @@ namespace Funcations
             Console.WriteLine("2. Largest of Three Numbers ");
             Console.WriteLine("3. Temperature Converter ");
             Console.WriteLine("4. Simple Discount Calculator ");
+            Console.WriteLine("5. Grading System ");
+            Console.WriteLine("6. Swap Two Numbers  ");
             int choice = int.Parse(Console.ReadLine());
 
 
@@ -144,13 +158,25 @@ namespace Funcations
                     double res4 = SimpleDiscountCalculator(price);
                     printValue(res4.ToString());
                     break;
-
+                // Grading System
                 case 5:
                     int Mark;
                     Console.WriteLine("Enter Your Mark:\n");
                     Mark = int.Parse(Console.ReadLine());
                     char res5 = GradingSystem(Mark);
                     printValue(res5.ToString());
+                    break;
+                // Swap Two Numbers 
+                case 6:
+                    double num4;
+                    double num5;
+                    Console.WriteLine("Enter First Number:\n");
+                    num1 = int.Parse(Console.ReadLine());
+
+                    Console.WriteLine("Enter Second Number:\n");
+                    num2 = int.Parse(Console.ReadLine());
+
+
                     break;
 
 
