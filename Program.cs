@@ -41,11 +41,24 @@ namespace Funcations
 
             return result;
         }
+        // Temperature Converter 
+        public static double TemperatureConverter(double C)
+        {
+
+            double F;
+
+            F = (C * 9 / 5) + 32;
+
+            return F;
+
+
+        }
         static void Main(string[] args)
         {
             Console.WriteLine("Enter the number of operation:"); 
             Console.WriteLine("1. Even or Odd ");
-            Console.WriteLine("2. Largest of Three Numbers  ");
+            Console.WriteLine("2. Largest of Three Numbers ");
+            Console.WriteLine("3. Temperature Converter ");
             int choice = int.Parse(Console.ReadLine());
 
 
@@ -66,8 +79,15 @@ namespace Funcations
                     Console.WriteLine("Enter third number:");
                     double num3 = double.Parse(Console.ReadLine());
 
-                    double result = LargestThreeNumbers(num1, num2, num3);
-                    Console.WriteLine($"The largest number is {result}");
+                    double res2 = LargestThreeNumbers(num1, num2, num3);
+                    Console.WriteLine($"The largest number is {res2}");
+                    break;
+
+                case 3:
+                    Console.WriteLine("\nEnter the dgree of temerature in Celsius:\n");
+                    double C = double.Parse(Console.ReadLine());
+                    double res3 = TemperatureConverter(C);
+                    Console.WriteLine("\nthe " + C + " Celsius degree in Fahrenheit is " + res3);
                     break;
 
 
