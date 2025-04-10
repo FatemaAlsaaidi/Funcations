@@ -296,7 +296,6 @@ namespace Funcations
 
                     string res9 = SimpleCalculator(num6, num7, operation);
                     printValue(res9);
-
                     break;
 
             }
