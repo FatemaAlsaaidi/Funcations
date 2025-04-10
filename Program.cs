@@ -103,15 +103,86 @@ namespace Funcations
             return massege;
 
         }
-
-        public static double DaystoWeeksandDaysConverter(int UserDays)
+        // Days to Weeks and Days Converter 
+        public static string DaystoWeeksandDaysConverter(int UserDays)
         {
             int week;
             int days;
             week = UserDays / 7;
             days = UserDays % 7;
-            string massage = week + " weeks and " + days + " days";
+            string massege1 = week + " weeks and " + days + " days";
+            return massege1;
+        }
+
+        // Electricity Bill Calculator 
+        public static string ElectricityBillCalculator(double NumberUnitsConsume)
+        {
+            string massage;
+            double ElectricityBill;
+
+            if (NumberUnitsConsume <= 100)
+            {
+                ElectricityBill = NumberUnitsConsume * 0.5;
+                massage = "The Electricity Bill is: " + ElectricityBill;
+
+            }
+
+            else if (NumberUnitsConsume >= 101 && NumberUnitsConsume <= 300)
+            {
+                ElectricityBill = NumberUnitsConsume * 0.75;
+                massage = "The Electricity Bill is: " + ElectricityBill;
+            }
+
+            else
+            {
+                ElectricityBill = NumberUnitsConsume * 1;
+                massage = "The Electricity Bill is: " + ElectricityBill;
+
+            }
+
             return massage;
+        }
+        // Simple Calculator
+        public static string SimpleCalculator(double num1, double num2, char operation)
+        {
+            string massage1;
+            double res;
+            if (operation == '+')
+            {
+                res = num1 + num2;
+                massage1 = "The result is: " + res;
+
+            }
+
+            else if (operation == '*')
+            {
+                res = num1* num2;
+                massage1 = "The result is: " + res;
+            }
+
+            else if (operation == '-')
+            {
+                res = num1 - num2;
+                massage1 = "The result is: " + res;
+            }
+
+            else if (operation == '/')
+            {
+                if (num2 != 0)
+                {
+                    res = num1 / num2;
+                    massage1 = "The result is: " + res;
+                }
+                else
+                {
+                    massage1 = "Can not devided by 0";
+                }
+            }
+            else
+            {
+                    massage1 = "the operation is unavilable";
+            }
+            return massage1;
         }
         public static void printValue(string input)
         {
@@ -127,6 +198,9 @@ namespace Funcations
             Console.WriteLine("4. Simple Discount Calculator ");
             Console.WriteLine("5. Grading System ");
             Console.WriteLine("6. Swap Two Numbers  ");
+            Console.WriteLine("7. Days to Weeks and Days Converter ");
+            Console.WriteLine("8. Electricity Bill Calculator ");
+            Console.WriteLine("9. Simple Calculator  ");
             int choice = int.Parse(Console.ReadLine());
 
 
@@ -186,22 +260,42 @@ namespace Funcations
                     num2 = int.Parse(Console.ReadLine());
 
                     string res6 = SwapTwoNumbers(num1, num2);
-                    printValue(res6.ToString());
+                    printValue(res6);
                     break;
                 // Days to Weeks and Days Converter 
                 case 7:
                     int UserDays;
                     Console.WriteLine("Enter the number of days :\n");
                     UserDays = int.Parse(Console.ReadLine());
+                    string res7 = DaystoWeeksandDaysConverter(UserDays);
+                    printValue(res7);
 
                     break;
                 // Electricity Bill Calculator
                 case 8:
-
+                    double NumberUnitsConsume;
+                    Console.WriteLine("Enter the number of units consume :\n");
+                    NumberUnitsConsume = float.Parse(Console.ReadLine());
+                    string res8 = ElectricityBillCalculator(NumberUnitsConsume);
+                    printValue(res8);
                     break;
 
                 // Simple Calculator 
                 case 9:
+                    double num6;
+                    double num7;
+                    char operation;
+                    Console.WriteLine("Enter First Number:\n");
+                    num6 = int.Parse(Console.ReadLine());
+
+                    Console.WriteLine("Enter Second Number:\n");
+                    num7 = int.Parse(Console.ReadLine());
+
+                    Console.WriteLine("Enter the operation:\n");
+                    operation = Console.ReadKey().KeyChar;
+
+                    string res9 = SimpleCalculator(num6, num7, operation);
+                    printValue(res9);
 
                     break;
 
